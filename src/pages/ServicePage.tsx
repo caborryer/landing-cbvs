@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ElasticGallery, type GalleryItem } from "@/ui/elastic-gallery";
+import escudoImg from '@/assets/escudo.png';
 
 const FLUID = [0.32, 0.72, 0, 1] as const;
 const fadeUp = (delay = 0) => ({
@@ -45,7 +46,7 @@ export default function ServicePage({ service }: { service: ServiceDetail }) {
 
         <a href="/" className="flex items-center gap-3 group">
           <div className="w-9 h-10 flex-shrink-0">
-            <img src="/escudo.png" alt="Escudo Bomberos" className="w-full h-full object-contain" />
+            <img src={escudoImg} alt="Escudo Bomberos" className="w-full h-full object-contain" />
           </div>
           <span className="hidden sm:block text-xs uppercase tracking-[0.2em] text-white/40 font-medium"
             style={{ fontFamily: "var(--font-sans)" }}>

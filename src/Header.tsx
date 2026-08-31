@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone } from 'lucide-react';
+import escudoImg from '@/assets/escudo.png';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,7 +45,7 @@ export default function Header() {
         >
           <div className="w-14 h-16 flex-shrink-0 transition-transform duration-500 group-hover:scale-105"
             style={{ transitionTimingFunction: 'cubic-bezier(0.34,1.56,0.64,1)' }}>
-            <img src="/escudo.png" alt="Escudo Bomberos San Jerónimo" className="w-full h-full object-contain drop-shadow-[0_2px_16px_rgba(198,40,40,0.5)]" />
+            <img src={escudoImg} alt="Escudo Bomberos San Jerónimo" className="w-full h-full object-contain drop-shadow-[0_2px_16px_rgba(198,40,40,0.5)]" />
           </div>
           <div className="flex flex-col items-start leading-none">
             <span

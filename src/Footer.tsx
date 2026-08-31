@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import escudoImg from '@/assets/escudo.png';
 
 const FLUID = [0.32, 0.72, 0, 1] as const;
 
@@ -69,7 +70,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <div className="w-14 h-16 flex-shrink-0">
               <img
-                src="/escudo.png"
+                src={escudoImg}
                 alt="Escudo oficial Bomberos San Jerónimo"
                 className="w-full h-full object-contain drop-shadow-[0_4px_20px_rgba(198,40,40,0.45)]"
               />
