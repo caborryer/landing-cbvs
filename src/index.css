@@ -1,0 +1,67 @@
+/* ── Premium font stack: Clash Display (headings) + Plus Jakarta Sans (body) ── */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  /* ── Brand colours ── */
+  --color-fire:          #C62828;
+  --color-fire-dark:     #8E0000;
+  --color-fire-light:    #f5e6e5;
+  --color-fire-accent:   #F4D03F;
+  --color-fire-glow:     rgba(198, 40, 40, 0.45);
+  --color-navy:          #0D0F1A;
+  --color-dark:          #080A10;
+  --color-dark-surface:  #111318;
+  --color-dark-card:     #13161F;
+  --color-dark-border:   rgba(255,255,255,0.06);
+  --color-dark-hairline: rgba(255,255,255,0.10);
+
+  /* ── Typography ── */
+  --font-display: 'Clash Display', 'Barlow Condensed', sans-serif;
+  --font-body:    'Plus Jakarta Sans', 'Barlow', system-ui, sans-serif;
+  --font-sans:    'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif:   'Instrument Serif', Georgia, serif;
+
+  /* ── Easing ── */
+  --ease-fluid:   cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth:  cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* ── Grain overlay (fixed, GPU-safe, pointer-events none) ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  mix-blend-mode: overlay;
+}
+
+/* ── Fade-up entry animations ── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(22px); filter: blur(4px); }
+  to   { opacity: 1; transform: translateY(0);    filter: blur(0);   }
+}
+
+.animate-fade-1 { animation: fadeSlideIn 0.8s var(--ease-fluid) both; }
+.animate-fade-2 { animation: fadeSlideIn 0.8s 0.12s var(--ease-fluid) both; }
+.animate-fade-3 { animation: fadeSlideIn 0.8s 0.24s var(--ease-fluid) both; }
+.animate-fade-4 { animation: fadeSlideIn 0.8s 0.36s var(--ease-fluid) both; }
+.animate-fade-5 { animation: fadeSlideIn 0.8s 0.52s var(--ease-fluid) both; }
+
+/* ── Base ── */
+html, body, #root {
+  height: 100%;
+  font-family: var(--font-body);
+  background-color: var(--color-dark);
+  color: #e8eaf0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* { scrollbar-width: none; }
+*::-webkit-scrollbar { display: none; }
